@@ -13,8 +13,11 @@ module.exports = {
             name: 'products', // Name of module that is going to be fetch by HOST
             filename: 'remoteEntry.js', // name of file that is going to be fetch by HOST
             exposes: {
-                './ProductsIndex': './src/index' // source code location to be exposed
+                './ProductsIndex': './src/bootstrap' // source code location to be exposed
             },
+            shared: [ // Share node imports that this microfrentend has and maybe other microfrontends have!
+                'faker'
+            ],
         }),
         // For automatically
         new HtmlWebpackPlugin({
